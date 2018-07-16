@@ -28,5 +28,5 @@ docker-compose restart
 ```
 $ brew install watchexec
 $ docker-compose up -d
-$ watchexec --restart --exts "go" --watch . "docker-compose restart app"
+$ watchexec --restart --exts "go" --watch . "docker-compose restart go-docker-boilerplate"
 ```
