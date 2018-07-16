@@ -1,9 +1,21 @@
 version: '3'
 services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: dev
+      POSTGRES_USER: postgres-dev
+      POSTGRES_PASSWORD: s3cr3tp4ssw0rd
+    ports:
+      - 5432:5432
   go-docker-boilerplate:
     build: .
-    command: ["go", "run", "main.go"]
+    command: ["./wait-for-it.sh","db:5432","--","go", "run", "main.go"]
     volumes:
       - .:/go/src/go-docker-boilerplate
     ports:
-      - "8080:8080"
+      - "80:8080"
+    depends_on:
+      - db
+    links:
+      - db
