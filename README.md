@@ -17,7 +17,7 @@ go-docker-boilerplate_1  | Listening on :8080
 docker-compose down --rmi
 ```
 
-###all and then restart
+### All and then restart
 
 ```
 docker-compose restart
