@@ -2,7 +2,7 @@ version: '3'
 services:
   go-docker-boilerplate:
     build: .
-    command: ["./wait-for-it.sh","db:5432","--","go", "run", "main.go"]
+    command: ["go", "run", "main.go"]
     volumes:
       - .:/go/src/go-docker-boilerplate
     ports:
